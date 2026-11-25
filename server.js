@@ -3,16 +3,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const app = express(); // <--- App MUST be defined before CORS
+const app = express();
 
+// Middleware (Only allowing your active Vercel link)
 app.use(cors({
-  origin: ["https://smartwaste-frontend.vercel.app", "https://smartwaste-sys-frontend.vercel.app"]
+  origin: "https://smartwaste-sys-frontend.vercel.app"
 }));
-
-
 app.use(express.json());
-
-
 
 // Import routes
 app.use("/api/auth", require("./routes/auth"));
