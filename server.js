@@ -9,6 +9,7 @@ const app = express();
 app.use(cors({
   origin: "https://smartwaste-sys-frontend.vercel.app"
 }));
+
 app.use(express.json());
 
 // Import routes
