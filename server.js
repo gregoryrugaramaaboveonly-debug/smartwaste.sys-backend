@@ -8,7 +8,7 @@ const app = express();
 // Middleware
 // We use the specific Vercel link here so your frontend can talk to your backend
 app.use(cors({
-  origin: "https://site-frontend.vercel.app" 
+  origin: "https://smartwaste-frontend.vercel.app"
 }));
 app.use(express.json());
 
