@@ -6,7 +6,10 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors());
+// We use the specific Vercel link here so your frontend can talk to your backend
+app.use(cors({
+  origin: "https://site-frontend.vercel.app" 
+}));
 app.use(express.json());
 
 // Import routes
@@ -29,7 +32,7 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB (SmartWasteDB)");
     app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
