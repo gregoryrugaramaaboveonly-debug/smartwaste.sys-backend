@@ -5,10 +5,11 @@ const cors = require("cors");
 
 const app = express(); // <--- App MUST be defined before CORS
 
-// Middleware
 app.use(cors({
-  origin: "https://smartwaste-frontend.vercel.app" // <--- Your exact link
+  origin: ["https://smartwaste-frontend.vercel.app", "https://smartwaste-sys-frontend.vercel.app"]
 }));
+
+
 app.use(express.json());
 
 
